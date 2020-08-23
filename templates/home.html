@@ -1,0 +1,39 @@
+    {% extends "layout.html" %}
+    {% block content %}
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+     <body>
+     <div class="container" id="main">
+
+      <div class="home">
+        <h1>Analyzer App</h1>
+        <p>Upoad you excel file to analyze and print chart</p>
+        <h2></h2>
+        <h2></h2>
+        <form action ="{{ url_for('index') }}"  method = "POST" enctype = "multipart/form-data" id="form1">
+         <input type = "file" name = "file" />
+         <br></br>
+         <label for="freq">Frequency:</label>
+         <select name="freq" id="freq"> 
+  		<option selected> 
+    			Daily 
+  		</option> 
+                <option selected>
+			Hourly
+		</option>
+  		<option> 
+    			Weekly
+  		</option> 
+  		<option> 
+    		       Monthly 
+  		</option> 
+	</select> 
+        <br></br>
+         <label for="quantity">Forecast Period:</label>
+         <input type="number" id="quantity" name="days" min="1" max="90"><br><br>
+      </form>
+      <button type="submit" form="form1" value="Submit">Submit</button>
+
+      </div>
+      </div>
+    </body>
+    {% endblock %}

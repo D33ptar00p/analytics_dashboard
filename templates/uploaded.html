@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+    {% block content %}
+
+
+
+<body>
+<div class="container" id="main">
+	<div class="container"> 
+            <div id="st-box"> 
+                  <div style="height:65px;padding-top:45px;">
+                   {{ total | safe }}
+                  </div>
+                  <div style="height:20px;font-size:20px;">
+                   Total
+                  </div>
+            </div> 
+              
+            <div id="nd-box"> 
+                  <div style="height:65px;padding-top:45px;">
+                   {{ mean | safe }}
+                  </div>
+                  <div style="height:20px;font-size:20px;">
+                   Average
+                  </div>
+
+            </div>
+            <div id="nn-box">
+                  <div style="height:65px;padding-top:45px;">
+                  {{ today | safe }}
+                  </div>
+                  <div style="height:20px;font-size:20px;">
+                   Today
+                  </div>
+
+            </div>
+              
+            <div id="rd-box"> 
+                  <div style="height:65px;padding-top:45px">
+                   {{ weekly | safe }}
+                  </div>
+                  <div style="height:20px;font-size:20px">
+                   This Week
+                  </div>
+
+            </div> 
+ 	</div>
+
+
+	<div>
+  		<div style="margin-top:8px;padding-top:5px;display:inline-block;height:250px;width:50.5%;float:left;background-color:grey">
+  			{% if mtrend == "up" %}
+  			<a><span><i class="material-icons" style="font-size:250px;color:red">arrow_circle_up</i><span class="icon-text"  style="font-size:40px">Trend last 2 months</span></a><br>
+  			{% else %}
+  			<a><span><i class="material-icons" style="font-size:250px;color:green">arrow_circle_down</i><span class="icon-text"  style="font-size:40px">Trend last 2 months</span></a><br>
+  			{%endif %}
+  		</div>
+  		<div style=" margin-top:8px;margin-left:8px;padding-top:5px;padding-left:5px;display:inline-block;height:250px;width:48%;float:left;background-color:grey">
+  			{% if wtrend == "up" %}
+   			<a><span><i class="material-icons" style="font-size:250px;color:red">arrow_circle_up</i><span class="icon-text" style="font-size:40px">Trend last 2 weeks</span></a><br>
+  			{% else %}
+   			<a><span><i class="material-icons" style="font-size:250px;color:green">arrow_circle_down</i><span class="icon-text" style="font-size:40px">Trend last 2 weeks</span></a><br>
+  			{%endif %}
+  		</div>
+	</div>
+
+        <div style="margin-top:5px;display:inline-block;width:100%">
+                <div style="padding-top:5px;display:inline-block;height:250px;width:50.5%;float:left">
+			<div style="margin-top:8px;padding-top:5px;font-size:20px">HIGHLIGHTS</div>
+			<div style="margin-top:8px;padding-top:5px;background-color:black;color:white;text-align:center">lorem psum</div>
+                        <div style="margin-top:8px;padding-top:5px;background-color:black;color:white;text-align:center">lorem ipsum</div>
+                        <div style="margin-top:8px;padding-top:5px;background-color:black;color:white;text-align:center">lorem ipsum</div>
+                        <div style="margin-top:8px;padding-top:5px;background-color:black;color:white;text-align:center">lorem ipsum</div>
+                        <div style="margin-top:8px;padding-top:5px;background-color:black;color:white;text-align:center">lorem ipsum</div>
+                        <div style="margin-top:8px;padding-top:5px;background-color:black;color:white;text-align:center">lorem psum</div>
+                        <div style="margin-top:8px;padding-top:5px;background-color:black;color:white;text-align:center">lorem ipsum</div>
+                </div>
+                <div style="margin-left:8px;padding-top:5px;padding-left:5px;display:inline-block;height:250px;width:48%;float:left">
+		<div id="table" class="chart" style="margin-top:5px">
+	         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+        	 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      		   <!-- Plotly.js -->
+        	 <script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+
+        	 <script type="text/javascript">
+
+        	 var graphs = {{table | safe}};
+
+        	 Plotly.plot('table',graphs,{});
+
+        	 </script>
+
+        	 </div>
+
+		</div>
+	</div>
+       
+        <div style="margin-top:5px;display:inline-block;width:100%">
+       	<div id="chart" class="chart" style="margin-top:5px">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+	    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	    <!-- Plotly.js -->
+   	    <script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+
+   		 <script type="text/javascript">
+
+      		  var graphs = {{plot | safe}};
+
+      		  Plotly.plot('chart',graphs,{});
+
+   	     </script>
+
+        </div>
+
+        <div id="ychart" class="chart" style="margin-top:5px">
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+   	 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+   	 <!-- Plotly.js -->
+   	 <script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+
+   	 <script type="text/javascript">
+
+        	var graphs = {{yplot | safe}};
+
+  	      Plotly.plot('ychart',graphs,{});
+
+   	 </script>
+	  </div>
+
+	 <div id="mchart" class="chart" style="margin-top:5px">
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+   	 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+   	 <!-- Plotly.js -->
+   	 <script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+
+   	 <script type="text/javascript">
+
+       	 var graphs = {{mplot | safe}};
+
+       	 Plotly.plot('mchart',graphs,{});
+
+   	 </script>
+ 	 </div>
+
+
+	</div>
+</div>
+
+</body>
+
+
+
+{% endblock %}
+

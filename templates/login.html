@@ -1,0 +1,17 @@
+<html>
+<body style="background-color:grey;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%)">
+<h1> Analyzer and Forecast App </h1>
+<div style="align-items:center;display: flex;justify-content: center;">
+ <form action ="{{ url_for('home') }}"  method = "POST" enctype = "multipart/form-data" id="form1">
+  <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+    <br></br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <br></br>
+    <button type="submit" style="width: 100%">Login</button>
+    <label>    
+ </form>
+</div>
+</body>
+</html>

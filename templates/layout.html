@@ -1,0 +1,36 @@
+    <!DOCTYPE html>
+    <html>
+     <head>
+
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+     </head>
+     <script type=text/javascript src="{{
+	  url_for('static', filename='main.js') }}"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+	  <a href="/home"><span><i class="material-icons">home</i><span class="icon-text">Home</span></a><br>
+	  <a href="/uploader"><i class="material-icons">analytics</i><span class="icon-text"></span>Summary</a></span>
+	  </a><br>
+	  <a href="#"><i class="material-icons">show_chart</i><span class="icon-text"></span>Forecast</span></a><br>
+	  <a href="#"><span><i class="material-icons">info</i><span class="icon-text">About</span></a><br>
+	  <a href="#"><i class="material-icons">email</i><span class="icon-text"></span>Contact<span></a>
+	</div>
+
+      <body>
+        <header>
+          <div class="container">
+            <strong><nav>
+              <ul class="menu">
+                <li><a href="/login">Logout</a></li>
+              </ul>
+            </nav></strong>
+          </div>
+        </header>
+       {% block content %}
+       {% endblock %}
+      </body>
+    </html>   

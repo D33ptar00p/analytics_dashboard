@@ -1,0 +1,7 @@
+flask
+flask_nav
+numpy
+pandas
+matplotlib
+xlrd
+
