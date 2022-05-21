@@ -6,3 +6,4 @@ matplotlib
 xlrd
 gunicorn
 openpyxl
+plotly
