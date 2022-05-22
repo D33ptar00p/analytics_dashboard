@@ -281,5 +281,7 @@ def index():
     return render_template('uploaded.html', plot=bar, mean=stat[0], total=stat[1], weekly=stat[2], today=stat[3], yplot=ybar, mplot=mbar, wtrend=stat[4],mtrend="down",table=table)
 
 
-app.run(debug=True,host = '0.0.0.0')
+#app.run(debug=True,host = '0.0.0.0')
+if __name__ == '__main__':
+    app.run()
 
