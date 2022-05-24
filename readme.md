@@ -1,6 +1,6 @@
 # Analytics Dashboard
 
-This application is deloped using Python Flask framework to provide a analytics dashboard from the timeseries provided.
+This application is developed using Python Flask framework to provide a analytics dashboard from the timeseries provided.
 
 Below is the homepage, you ay upload the the data file for timeseries data 
 
